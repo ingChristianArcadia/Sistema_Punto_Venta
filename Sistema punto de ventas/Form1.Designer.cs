@@ -324,14 +324,13 @@
             // textBoxCliente_Nid
             // 
             this.textBoxCliente_Nid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxCliente_Nid.Enabled = false;
             this.textBoxCliente_Nid.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCliente_Nid.Location = new System.Drawing.Point(21, 232);
             this.textBoxCliente_Nid.Multiline = true;
             this.textBoxCliente_Nid.Name = "textBoxCliente_Nid";
             this.textBoxCliente_Nid.Size = new System.Drawing.Size(194, 36);
             this.textBoxCliente_Nid.TabIndex = 4;
-            this.textBoxCliente_Nid.TextChanged += new System.EventHandler(this.textBoxCliente_Nid_TextChanged);
-            this.textBoxCliente_Nid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCliente_Nid_KeyPress);
             // 
             // labelCliente_Nid
             // 

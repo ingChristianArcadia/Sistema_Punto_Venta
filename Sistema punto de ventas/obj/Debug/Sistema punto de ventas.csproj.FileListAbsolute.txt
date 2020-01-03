@@ -12,3 +12,11 @@ C:\Users\Christian Arcadia\Documents\Visual Studio 2015\Projects\Sistema punto d
 E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\bin\Debug\Sistema punto de ventas.exe.config
 E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema punto de ventas.exe
 E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema punto de ventas.pdb
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\bin\Debug\Sistema punto de ventas.exe
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\bin\Debug\Sistema punto de ventas.pdb
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\bin\Debug\ViewModels.dll
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\bin\Debug\ViewModels.pdb
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema punto de ventas.csprojResolveAssemblyReference.cache
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema_punto_de_ventas.Form1.resources
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema_punto_de_ventas.Properties.Resources.resources
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema punto de ventas.csproj.GenerateResource.Cache
