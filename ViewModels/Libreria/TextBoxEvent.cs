@@ -11,7 +11,7 @@ namespace ViewModels.Libreria
     {
         public void textKeyPress(KeyPressEventArgs e)
         {
-            //Condicion que solo nos permite ingresar datos de tipo texto
+            //Condicion que solo nos permite ingresar dato de tipo texto
             if (char.IsLetter(e.KeyChar))
             {
                 e.Handled = false;
