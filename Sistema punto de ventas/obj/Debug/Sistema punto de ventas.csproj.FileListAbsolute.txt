@@ -9,3 +9,6 @@ c:\users\christian arcadia\documents\visual studio 2015\Projects\Sistema punto d
 c:\users\christian arcadia\documents\visual studio 2015\Projects\Sistema punto de ventas\Sistema punto de ventas\obj\Debug\Sistema punto de ventas.pdb
 C:\Users\Christian Arcadia\Documents\Visual Studio 2015\Projects\Sistema punto de ventas\Sistema punto de ventas\bin\Debug\ViewModels.dll
 C:\Users\Christian Arcadia\Documents\Visual Studio 2015\Projects\Sistema punto de ventas\Sistema punto de ventas\bin\Debug\ViewModels.pdb
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\bin\Debug\Sistema punto de ventas.exe.config
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema punto de ventas.exe
+E:\Users\Christian Arcadia\Source\Repos\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema punto de ventas.pdb

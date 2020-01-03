@@ -19,7 +19,7 @@ namespace Sistema_punto_de_ventas
         }
         /*************************************
         *                                    *
-        *       CODIGO DEL CLIENTE           *
+        *       CODIGO DEL CLIENTES          *
         *                                    *
         **************************************/
         #region
