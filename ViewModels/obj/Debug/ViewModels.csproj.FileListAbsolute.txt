@@ -1,0 +1,5 @@
+C:\Users\Christian Arcadia\Documents\Visual Studio 2015\Projects\Sistema punto de ventas\ViewModels\bin\Debug\ViewModels.dll
+C:\Users\Christian Arcadia\Documents\Visual Studio 2015\Projects\Sistema punto de ventas\ViewModels\bin\Debug\ViewModels.pdb
+C:\Users\Christian Arcadia\Documents\Visual Studio 2015\Projects\Sistema punto de ventas\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache
+C:\Users\Christian Arcadia\Documents\Visual Studio 2015\Projects\Sistema punto de ventas\ViewModels\obj\Debug\ViewModels.dll
+C:\Users\Christian Arcadia\Documents\Visual Studio 2015\Projects\Sistema punto de ventas\ViewModels\obj\Debug\ViewModels.pdb
