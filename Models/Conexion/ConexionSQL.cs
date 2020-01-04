@@ -1,6 +1,4 @@
-﻿using LinqToDB;
-using LinqToDB.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace Models.Conexion
 {
-   public class ConexionSQL : DataConnection
+    class ConexionSQL
     {
-        public ConexionSQL() : base("PDHN2")
-        {
-
-        }
-
-        public ITable<TClientes> TClientes { get { return GetTable<TClientes>(); } }
-        public ITable<TReportes_clientes> TReportes_clientes { get { return GetTable<TReportes_clientes>(); } }
+        public static string conexion = "Data Source = DESKTOP-84CDHH6; Initial Catalog=Punto_Ventas; User ID=sa; Password=SQL2019; Integrated Security=True";
     }
 }

@@ -36,6 +36,11 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.labelCliente_Direccion_Error = new System.Windows.Forms.Label();
+            this.labelCliente_Telefono_Error = new System.Windows.Forms.Label();
+            this.labelCliente_Email_Error = new System.Windows.Forms.Label();
+            this.labelCliente_Apellido_Error = new System.Windows.Forms.Label();
+            this.labelCliente_Nombre_Error = new System.Windows.Forms.Label();
             this.buttonCliente_Cancelar = new System.Windows.Forms.Button();
             this.buttonCliente_Agregar = new System.Windows.Forms.Button();
             this.textBoxCliente_Direccion = new System.Windows.Forms.TextBox();
@@ -63,11 +68,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCliente = new System.Windows.Forms.Button();
-            this.labelCliente_Nombre_Error = new System.Windows.Forms.Label();
-            this.labelCliente_Apellido_Error = new System.Windows.Forms.Label();
-            this.labelCliente_Email_Error = new System.Windows.Forms.Label();
-            this.labelCliente_Telefono_Error = new System.Windows.Forms.Label();
-            this.labelCliente_Direccion_Error = new System.Windows.Forms.Label();
+            this.labelPrueba = new System.Windows.Forms.Label();
             this.tabControlPrincipal.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -158,6 +159,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.labelPrueba);
             this.tabPage3.Controls.Add(this.labelCliente_Direccion_Error);
             this.tabPage3.Controls.Add(this.labelCliente_Telefono_Error);
             this.tabPage3.Controls.Add(this.labelCliente_Email_Error);
@@ -186,6 +188,71 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Registro de clientes";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // labelCliente_Direccion_Error
+            // 
+            this.labelCliente_Direccion_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Direccion_Error.AutoSize = true;
+            this.labelCliente_Direccion_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Direccion_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Direccion_Error.Location = new System.Drawing.Point(231, 405);
+            this.labelCliente_Direccion_Error.Name = "labelCliente_Direccion_Error";
+            this.labelCliente_Direccion_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Direccion_Error.TabIndex = 21;
+            this.labelCliente_Direccion_Error.Text = "*Mensaje";
+            this.labelCliente_Direccion_Error.Visible = false;
+            // 
+            // labelCliente_Telefono_Error
+            // 
+            this.labelCliente_Telefono_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Telefono_Error.AutoSize = true;
+            this.labelCliente_Telefono_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Telefono_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Telefono_Error.Location = new System.Drawing.Point(21, 405);
+            this.labelCliente_Telefono_Error.Name = "labelCliente_Telefono_Error";
+            this.labelCliente_Telefono_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Telefono_Error.TabIndex = 20;
+            this.labelCliente_Telefono_Error.Text = "*Mensaje";
+            this.labelCliente_Telefono_Error.Visible = false;
+            // 
+            // labelCliente_Email_Error
+            // 
+            this.labelCliente_Email_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Email_Error.AutoSize = true;
+            this.labelCliente_Email_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Email_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Email_Error.Location = new System.Drawing.Point(231, 338);
+            this.labelCliente_Email_Error.Name = "labelCliente_Email_Error";
+            this.labelCliente_Email_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Email_Error.TabIndex = 19;
+            this.labelCliente_Email_Error.Text = "*Mensaje";
+            this.labelCliente_Email_Error.Visible = false;
+            // 
+            // labelCliente_Apellido_Error
+            // 
+            this.labelCliente_Apellido_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Apellido_Error.AutoSize = true;
+            this.labelCliente_Apellido_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Apellido_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Apellido_Error.Location = new System.Drawing.Point(21, 338);
+            this.labelCliente_Apellido_Error.Name = "labelCliente_Apellido_Error";
+            this.labelCliente_Apellido_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Apellido_Error.TabIndex = 18;
+            this.labelCliente_Apellido_Error.Text = "*Mensaje";
+            this.labelCliente_Apellido_Error.Visible = false;
+            // 
+            // labelCliente_Nombre_Error
+            // 
+            this.labelCliente_Nombre_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Nombre_Error.AutoSize = true;
+            this.labelCliente_Nombre_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Nombre_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Nombre_Error.Location = new System.Drawing.Point(231, 270);
+            this.labelCliente_Nombre_Error.Name = "labelCliente_Nombre_Error";
+            this.labelCliente_Nombre_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Nombre_Error.TabIndex = 17;
+            this.labelCliente_Nombre_Error.Text = "*Mensaje";
+            this.labelCliente_Nombre_Error.Visible = false;
             // 
             // buttonCliente_Cancelar
             // 
@@ -504,70 +571,18 @@
             this.buttonCliente.UseVisualStyleBackColor = false;
             this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
             // 
-            // labelCliente_Nombre_Error
+            // labelPrueba
             // 
-            this.labelCliente_Nombre_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelCliente_Nombre_Error.AutoSize = true;
-            this.labelCliente_Nombre_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente_Nombre_Error.ForeColor = System.Drawing.Color.Red;
-            this.labelCliente_Nombre_Error.Location = new System.Drawing.Point(231, 270);
-            this.labelCliente_Nombre_Error.Name = "labelCliente_Nombre_Error";
-            this.labelCliente_Nombre_Error.Size = new System.Drawing.Size(47, 13);
-            this.labelCliente_Nombre_Error.TabIndex = 17;
-            this.labelCliente_Nombre_Error.Text = "*Mensaje";
-            this.labelCliente_Nombre_Error.Visible = false;
-            // 
-            // labelCliente_Apellido_Error
-            // 
-            this.labelCliente_Apellido_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelCliente_Apellido_Error.AutoSize = true;
-            this.labelCliente_Apellido_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente_Apellido_Error.ForeColor = System.Drawing.Color.Red;
-            this.labelCliente_Apellido_Error.Location = new System.Drawing.Point(21, 338);
-            this.labelCliente_Apellido_Error.Name = "labelCliente_Apellido_Error";
-            this.labelCliente_Apellido_Error.Size = new System.Drawing.Size(47, 13);
-            this.labelCliente_Apellido_Error.TabIndex = 18;
-            this.labelCliente_Apellido_Error.Text = "*Mensaje";
-            this.labelCliente_Apellido_Error.Visible = false;
-            // 
-            // labelCliente_Email_Error
-            // 
-            this.labelCliente_Email_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelCliente_Email_Error.AutoSize = true;
-            this.labelCliente_Email_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente_Email_Error.ForeColor = System.Drawing.Color.Red;
-            this.labelCliente_Email_Error.Location = new System.Drawing.Point(231, 338);
-            this.labelCliente_Email_Error.Name = "labelCliente_Email_Error";
-            this.labelCliente_Email_Error.Size = new System.Drawing.Size(47, 13);
-            this.labelCliente_Email_Error.TabIndex = 19;
-            this.labelCliente_Email_Error.Text = "*Mensaje";
-            this.labelCliente_Email_Error.Visible = false;
-            // 
-            // labelCliente_Telefono_Error
-            // 
-            this.labelCliente_Telefono_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelCliente_Telefono_Error.AutoSize = true;
-            this.labelCliente_Telefono_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente_Telefono_Error.ForeColor = System.Drawing.Color.Red;
-            this.labelCliente_Telefono_Error.Location = new System.Drawing.Point(21, 405);
-            this.labelCliente_Telefono_Error.Name = "labelCliente_Telefono_Error";
-            this.labelCliente_Telefono_Error.Size = new System.Drawing.Size(47, 13);
-            this.labelCliente_Telefono_Error.TabIndex = 20;
-            this.labelCliente_Telefono_Error.Text = "*Mensaje";
-            this.labelCliente_Telefono_Error.Visible = false;
-            // 
-            // labelCliente_Direccion_Error
-            // 
-            this.labelCliente_Direccion_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelCliente_Direccion_Error.AutoSize = true;
-            this.labelCliente_Direccion_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente_Direccion_Error.ForeColor = System.Drawing.Color.Red;
-            this.labelCliente_Direccion_Error.Location = new System.Drawing.Point(231, 405);
-            this.labelCliente_Direccion_Error.Name = "labelCliente_Direccion_Error";
-            this.labelCliente_Direccion_Error.Size = new System.Drawing.Size(47, 13);
-            this.labelCliente_Direccion_Error.TabIndex = 21;
-            this.labelCliente_Direccion_Error.Text = "*Mensaje";
-            this.labelCliente_Direccion_Error.Visible = false;
+            this.labelPrueba.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPrueba.AutoSize = true;
+            this.labelPrueba.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrueba.ForeColor = System.Drawing.Color.Red;
+            this.labelPrueba.Location = new System.Drawing.Point(193, 433);
+            this.labelPrueba.Name = "labelPrueba";
+            this.labelPrueba.Size = new System.Drawing.Size(47, 13);
+            this.labelPrueba.TabIndex = 22;
+            this.labelPrueba.Text = "*Mensaje";
+            this.labelPrueba.Visible = false;
             // 
             // Form1
             // 
@@ -640,6 +655,7 @@
         private System.Windows.Forms.Label labelCliente_Telefono_Error;
         private System.Windows.Forms.Label labelCliente_Email_Error;
         private System.Windows.Forms.Label labelCliente_Apellido_Error;
+        private System.Windows.Forms.Label labelPrueba;
     }
 }
 

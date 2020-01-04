@@ -20,10 +20,10 @@ namespace ViewModels
             _textBoxCliente = textBoxCliente;
             _labelCliente_Error = labelCliente_Error;
         }
-        public void guardarCliente()
+        public bool EsVacio()
         {
-
             var tam = _textBoxCliente.Count;
+            bool b1 = true;
             for (var i = 0; i <= tam - 1; i++)
             {
                 if (_textBoxCliente[i].Text.Equals(""))
@@ -32,8 +32,10 @@ namespace ViewModels
                     _labelCliente_Error[i].ForeColor = Color.Red;
                     _labelCliente_Error[i].Visible = true;
                     _textBoxCliente[i].Focus();
-                }   
-            }    
+                    b1 = false;                    
+                }               
+            }//for
+            return b1;
         }
 
         public void limpiarLabelClienteError()
@@ -46,18 +48,20 @@ namespace ViewModels
 
         }
 
-        public void ValidarCorreo(string correo)
+        public bool ValidarCorreo(string correo)
         {
+            bool b2 = true;
             if (correo == "")
             {
                 _labelCliente_Error[2].Text = "*Este campo es requerido";
                 _labelCliente_Error[2].ForeColor = Color.Red;
                 _labelCliente_Error[2].Visible = true;
                 _textBoxCliente[2].Focus();
+                b2 = false;
             }
             else if (new EmailAddressAttribute().IsValid(correo))
             {               
-                _labelCliente_Error[2].Visible = false;
+                _labelCliente_Error[2].Visible = false;                
             }else
             {
                 
@@ -65,8 +69,10 @@ namespace ViewModels
                 _labelCliente_Error[2].Text = "*El correo no es valido";
                 _labelCliente_Error[2].ForeColor = Color.Red;
                 _textBoxCliente[2].Focus();
+                b2 = false;
 
-            }            
+            }
+            return b2;           
         }
     }
 }
