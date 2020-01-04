@@ -197,9 +197,9 @@
             this.buttonCliente_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCliente_Cancelar.ForeColor = System.Drawing.Color.Transparent;
             this.buttonCliente_Cancelar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCliente_Cancelar.Image")));
-            this.buttonCliente_Cancelar.Location = new System.Drawing.Point(231, 421);
+            this.buttonCliente_Cancelar.Location = new System.Drawing.Point(284, 421);
             this.buttonCliente_Cancelar.Name = "buttonCliente_Cancelar";
-            this.buttonCliente_Cancelar.Size = new System.Drawing.Size(90, 33);
+            this.buttonCliente_Cancelar.Size = new System.Drawing.Size(98, 33);
             this.buttonCliente_Cancelar.TabIndex = 16;
             this.buttonCliente_Cancelar.UseVisualStyleBackColor = false;
             this.buttonCliente_Cancelar.Click += new System.EventHandler(this.buttonCliente_Cancelar_Click);
@@ -214,9 +214,9 @@
             this.buttonCliente_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCliente_Agregar.ForeColor = System.Drawing.Color.Transparent;
             this.buttonCliente_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCliente_Agregar.Image")));
-            this.buttonCliente_Agregar.Location = new System.Drawing.Point(125, 421);
+            this.buttonCliente_Agregar.Location = new System.Drawing.Point(68, 421);
             this.buttonCliente_Agregar.Name = "buttonCliente_Agregar";
-            this.buttonCliente_Agregar.Size = new System.Drawing.Size(90, 33);
+            this.buttonCliente_Agregar.Size = new System.Drawing.Size(98, 33);
             this.buttonCliente_Agregar.TabIndex = 15;
             this.buttonCliente_Agregar.UseVisualStyleBackColor = false;
             this.buttonCliente_Agregar.Click += new System.EventHandler(this.buttonCliente_Agregar_Click);

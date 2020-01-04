@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ViewModels
 {
@@ -20,9 +22,9 @@ namespace ViewModels
         }
         public void guardarCliente()
         {
+
             var tam = _textBoxCliente.Count;
-            
-            for(var i = 0; i <= tam - 1; i++)
+            for (var i = 0; i <= tam - 1; i++)
             {
                 if (_textBoxCliente[i].Text.Equals(""))
                 {
@@ -32,6 +34,39 @@ namespace ViewModels
                     _textBoxCliente[i].Focus();
                 }   
             }    
+        }
+
+        public void limpiarLabelClienteError()
+        {
+            var tam = _textBoxCliente.Count;
+            for (var i = 0; i <=tam  - 1; i++)
+            {                
+                    _labelCliente_Error[i].Visible = false;   
+            }
+
+        }
+
+        public void ValidarCorreo(string correo)
+        {
+            if (correo == "")
+            {
+                _labelCliente_Error[2].Text = "*Este campo es requerido";
+                _labelCliente_Error[2].ForeColor = Color.Red;
+                _labelCliente_Error[2].Visible = true;
+                _textBoxCliente[2].Focus();
+            }
+            else if (new EmailAddressAttribute().IsValid(correo))
+            {               
+                _labelCliente_Error[2].Visible = false;
+            }else
+            {
+                
+                _labelCliente_Error[2].Visible = true;
+                _labelCliente_Error[2].Text = "*El correo no es valido";
+                _labelCliente_Error[2].ForeColor = Color.Red;
+                _textBoxCliente[2].Focus();
+
+            }            
         }
     }
 }

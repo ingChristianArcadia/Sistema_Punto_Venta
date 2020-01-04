@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ViewModels;
 using ViewModels.Libreria;
 
+
 namespace Sistema_punto_de_ventas
 {
     public partial class Form1 : Form
@@ -132,12 +133,10 @@ namespace Sistema_punto_de_ventas
 
         private void buttonCliente_Agregar_Click(object sender, EventArgs e)
         {
-            labelCliente_Nombre_Error.Visible = false;
-            labelCliente_Apellido_Error.Visible = false;
-            labelCliente_Email_Error.Visible = false;
-            labelCliente_Direccion_Error.Visible = false;
-            labelCliente_Telefono_Error.Visible = false;
-            clientes.guardarCliente();
+            clientes.limpiarLabelClienteError();               
+            clientes.guardarCliente();            
+            clientes.ValidarCorreo(textBoxCliente_Email.Text);
+            
         }
 
         private void buttonCliente_Cancelar_Click(object sender, EventArgs e)

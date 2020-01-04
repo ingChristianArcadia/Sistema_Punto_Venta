@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
 
 namespace ViewModels.Libreria
 {
@@ -57,6 +58,11 @@ namespace ViewModels.Libreria
                 e.Handled = true;
             }
 
+        }
+
+        public bool comprobarFormatoEmail(string email)
+        {
+            return new EmailAddressAttribute().IsValid(email);
         }
     }
 }
