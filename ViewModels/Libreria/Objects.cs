@@ -10,5 +10,6 @@ namespace ViewModels.Libreria
     {
         public static ClientesVM clientes;
         public static Uploadimage uploadimage = new Uploadimage();
+        public static TextBoxEvent eventos = new TextBoxEvent();
     }
 }

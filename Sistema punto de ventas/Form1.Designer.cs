@@ -63,6 +63,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCliente = new System.Windows.Forms.Button();
+            this.labelCliente_Nombre_Error = new System.Windows.Forms.Label();
+            this.labelCliente_Apellido_Error = new System.Windows.Forms.Label();
+            this.labelCliente_Email_Error = new System.Windows.Forms.Label();
+            this.labelCliente_Telefono_Error = new System.Windows.Forms.Label();
+            this.labelCliente_Direccion_Error = new System.Windows.Forms.Label();
             this.tabControlPrincipal.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -89,6 +94,7 @@
             this.tabControlPrincipal.SelectedIndex = 0;
             this.tabControlPrincipal.Size = new System.Drawing.Size(1176, 625);
             this.tabControlPrincipal.TabIndex = 1;
+            this.tabControlPrincipal.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlPrincipal_Selected);
             // 
             // tabPage1
             // 
@@ -152,6 +158,11 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.labelCliente_Direccion_Error);
+            this.tabPage3.Controls.Add(this.labelCliente_Telefono_Error);
+            this.tabPage3.Controls.Add(this.labelCliente_Email_Error);
+            this.tabPage3.Controls.Add(this.labelCliente_Apellido_Error);
+            this.tabPage3.Controls.Add(this.labelCliente_Nombre_Error);
             this.tabPage3.Controls.Add(this.buttonCliente_Cancelar);
             this.tabPage3.Controls.Add(this.buttonCliente_Agregar);
             this.tabPage3.Controls.Add(this.textBoxCliente_Direccion);
@@ -173,7 +184,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(440, 474);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Cliente";
+            this.tabPage3.Text = "Registro de clientes";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // buttonCliente_Cancelar
@@ -191,6 +202,7 @@
             this.buttonCliente_Cancelar.Size = new System.Drawing.Size(90, 33);
             this.buttonCliente_Cancelar.TabIndex = 16;
             this.buttonCliente_Cancelar.UseVisualStyleBackColor = false;
+            this.buttonCliente_Cancelar.Click += new System.EventHandler(this.buttonCliente_Cancelar_Click);
             // 
             // buttonCliente_Agregar
             // 
@@ -207,6 +219,7 @@
             this.buttonCliente_Agregar.Size = new System.Drawing.Size(90, 33);
             this.buttonCliente_Agregar.TabIndex = 15;
             this.buttonCliente_Agregar.UseVisualStyleBackColor = false;
+            this.buttonCliente_Agregar.Click += new System.EventHandler(this.buttonCliente_Agregar_Click);
             // 
             // textBoxCliente_Direccion
             // 
@@ -356,6 +369,7 @@
             // 
             this.pictureBoxCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxCliente.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCliente.Image")));
             this.pictureBoxCliente.Location = new System.Drawing.Point(29, 19);
             this.pictureBoxCliente.Name = "pictureBoxCliente";
             this.pictureBoxCliente.Size = new System.Drawing.Size(146, 137);
@@ -490,6 +504,71 @@
             this.buttonCliente.UseVisualStyleBackColor = false;
             this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
             // 
+            // labelCliente_Nombre_Error
+            // 
+            this.labelCliente_Nombre_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Nombre_Error.AutoSize = true;
+            this.labelCliente_Nombre_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Nombre_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Nombre_Error.Location = new System.Drawing.Point(231, 270);
+            this.labelCliente_Nombre_Error.Name = "labelCliente_Nombre_Error";
+            this.labelCliente_Nombre_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Nombre_Error.TabIndex = 17;
+            this.labelCliente_Nombre_Error.Text = "*Mensaje";
+            this.labelCliente_Nombre_Error.Visible = false;
+            // 
+            // labelCliente_Apellido_Error
+            // 
+            this.labelCliente_Apellido_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Apellido_Error.AutoSize = true;
+            this.labelCliente_Apellido_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Apellido_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Apellido_Error.Location = new System.Drawing.Point(21, 338);
+            this.labelCliente_Apellido_Error.Name = "labelCliente_Apellido_Error";
+            this.labelCliente_Apellido_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Apellido_Error.TabIndex = 18;
+            this.labelCliente_Apellido_Error.Text = "*Mensaje";
+            this.labelCliente_Apellido_Error.Visible = false;
+            // 
+            // labelCliente_Email_Error
+            // 
+            this.labelCliente_Email_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Email_Error.AutoSize = true;
+            this.labelCliente_Email_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Email_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Email_Error.Location = new System.Drawing.Point(231, 338);
+            this.labelCliente_Email_Error.Name = "labelCliente_Email_Error";
+            this.labelCliente_Email_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Email_Error.TabIndex = 19;
+            this.labelCliente_Email_Error.Text = "*Mensaje";
+            this.labelCliente_Email_Error.Visible = false;
+            // 
+            // labelCliente_Telefono_Error
+            // 
+            this.labelCliente_Telefono_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Telefono_Error.AutoSize = true;
+            this.labelCliente_Telefono_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Telefono_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Telefono_Error.Location = new System.Drawing.Point(21, 405);
+            this.labelCliente_Telefono_Error.Name = "labelCliente_Telefono_Error";
+            this.labelCliente_Telefono_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Telefono_Error.TabIndex = 20;
+            this.labelCliente_Telefono_Error.Text = "*Mensaje";
+            this.labelCliente_Telefono_Error.Visible = false;
+            // 
+            // labelCliente_Direccion_Error
+            // 
+            this.labelCliente_Direccion_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Direccion_Error.AutoSize = true;
+            this.labelCliente_Direccion_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Direccion_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Direccion_Error.Location = new System.Drawing.Point(231, 405);
+            this.labelCliente_Direccion_Error.Name = "labelCliente_Direccion_Error";
+            this.labelCliente_Direccion_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Direccion_Error.TabIndex = 21;
+            this.labelCliente_Direccion_Error.Text = "*Mensaje";
+            this.labelCliente_Direccion_Error.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,6 +635,11 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button buttonCliente_Cancelar;
         private System.Windows.Forms.Button buttonCliente_Agregar;
+        private System.Windows.Forms.Label labelCliente_Nombre_Error;
+        private System.Windows.Forms.Label labelCliente_Direccion_Error;
+        private System.Windows.Forms.Label labelCliente_Telefono_Error;
+        private System.Windows.Forms.Label labelCliente_Email_Error;
+        private System.Windows.Forms.Label labelCliente_Apellido_Error;
     }
 }
 

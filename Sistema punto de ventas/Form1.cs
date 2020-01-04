@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ViewModels;
 using ViewModels.Libreria;
 
 namespace Sistema_punto_de_ventas
@@ -23,39 +24,19 @@ namespace Sistema_punto_de_ventas
         *                                    *
         **************************************/
         #region
+
+        private ClientesVM clientes;        
         private void buttonCliente_Click(object sender, EventArgs e)
-        {
+        {           
+
             tabControlPrincipal.SelectedIndex = 1;
         }
-
-
-
         
-
         private void pictureBoxCliente_Click(object sender, EventArgs e)
         {
             Objects.uploadimage.CargarImagen(pictureBoxCliente);     
-        }
-
+        }        
         
-        private void textBoxCliente_Nid_TextChanged(object sender, EventArgs e)
-        {
-            if (textBoxCliente_Nid.Text.Equals(""))
-            {
-                labelCliente_Nid.ForeColor = Color.LightSlateGray;
-            }else
-            {
-                labelCliente_Nid.Text = "Numero  ID";
-                labelCliente_Nid.ForeColor = Color.Green;
-            }
-        }
-        
-
-        private void textBoxCliente_Nid_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void textBoxCliente_Nombre_TextChanged(object sender, EventArgs e)
         {
             if (textBoxCliente_Nombre.Text.Equals(""))
@@ -71,7 +52,7 @@ namespace Sistema_punto_de_ventas
 
         private void textBoxCliente_Nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            Objects.eventos.textKeyPress(e);
         }
 
         private void textBoxCliente_Apellido_TextChanged(object sender, EventArgs e)
@@ -90,7 +71,7 @@ namespace Sistema_punto_de_ventas
 
         private void textBoxCliente_Apellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            Objects.eventos.textKeyPress(e);
         }
 
         private void textBoxCliente_Email_TextChanged(object sender, EventArgs e)
@@ -127,7 +108,7 @@ namespace Sistema_punto_de_ventas
 
         private void textBoxCliente_Telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            Objects.eventos.numberKeyPress(e);
         }
 
         private void textBoxCliente_Direccion_TextChanged(object sender, EventArgs e)
@@ -149,8 +130,44 @@ namespace Sistema_punto_de_ventas
 
         }
 
+        private void buttonCliente_Agregar_Click(object sender, EventArgs e)
+        {
+            labelCliente_Nombre_Error.Visible = false;
+            labelCliente_Apellido_Error.Visible = false;
+            labelCliente_Email_Error.Visible = false;
+            labelCliente_Direccion_Error.Visible = false;
+            labelCliente_Telefono_Error.Visible = false;
+            clientes.guardarCliente();
+        }
+
+        private void buttonCliente_Cancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControlPrincipal_Selected(object sender, TabControlEventArgs e)
+        {
+            var textBoxCliente = new List<TextBox>();
+            
+            //textBoxCliente.Add(textBoxCliente_Nid);
+            textBoxCliente.Add(textBoxCliente_Nombre);
+            textBoxCliente.Add(textBoxCliente_Apellido);
+            textBoxCliente.Add(textBoxCliente_Email);
+            textBoxCliente.Add(textBoxCliente_Direccion);
+            textBoxCliente.Add(textBoxCliente_Telefono);
+
+            var labelCliente_Error = new List<Label>();
+            labelCliente_Error.Add(labelCliente_Nombre_Error);
+            labelCliente_Error.Add(labelCliente_Apellido_Error);
+            labelCliente_Error.Add(labelCliente_Email_Error);
+            labelCliente_Error.Add(labelCliente_Direccion_Error);
+            labelCliente_Error.Add(labelCliente_Telefono_Error);
+            clientes = new ClientesVM(textBoxCliente, labelCliente_Error);
+
+        }
+
         #endregion
 
-       
+
     }
 }
