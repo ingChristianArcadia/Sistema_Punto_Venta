@@ -136,8 +136,9 @@ namespace Sistema_punto_de_ventas
             labelPrueba.Visible = false; //Eliminar al final
             clientes.limpiarLabelClienteError();               
             bool b1 =  clientes.EsVacio();            
-            bool b2 = clientes.ValidarCorreo(textBoxCliente_Email.Text);
-            if((b1 == true) && (b2 == true))
+            bool b2 = clientes.ValidarCorreo(textBoxCliente_Email.Text);            
+           // bool b3 = clientes.ValidarImagenCliente(pictureBoxCliente);
+            if((b1 == true) && (b2 == true)/* && (b3==true)*/)
             {
                 labelPrueba.Text = "Dato insertado";
                 labelPrueba.Visible = true;
@@ -167,8 +168,19 @@ namespace Sistema_punto_de_ventas
             labelCliente_Error.Add(labelCliente_Email_Error);
             labelCliente_Error.Add(labelCliente_Direccion_Error);
             labelCliente_Error.Add(labelCliente_Telefono_Error);
-            clientes = new ClientesVM(textBoxCliente, labelCliente_Error);
+            
 
+            object[] objetos =
+            {
+                pictureBoxCliente,
+                checkBoxCliente_Credito,
+                Properties.Resources.select
+
+
+            };
+
+
+            clientes = new ClientesVM(objetos,textBoxCliente, labelCliente_Error);
         }
 
         #endregion

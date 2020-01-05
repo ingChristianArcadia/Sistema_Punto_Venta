@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ViewModels.Libreria;
 
 namespace ViewModels
 {
@@ -14,11 +14,17 @@ namespace ViewModels
     {
         private List<Label> _labelCliente_Error;
         private List<TextBox> _textBoxCliente;
+        private PictureBox _ImagePictureBox;
+        private CheckBox _checkBoxCredito;
+        private Bitmap _imageBitmap;
 
-        public ClientesVM(List<TextBox> textBoxCliente, List<Label> labelCliente_Error)
+        public ClientesVM(object[] objetos,List<TextBox> textBoxCliente, List<Label> labelCliente_Error)
         {
             _textBoxCliente = textBoxCliente;
             _labelCliente_Error = labelCliente_Error;
+            _ImagePictureBox = (PictureBox)objetos[0];
+            _checkBoxCredito = (CheckBox)objetos[1];
+            _imageBitmap = (Bitmap)objetos[2];            
         }
         public bool EsVacio()
         {
@@ -73,6 +79,27 @@ namespace ViewModels
 
             }
             return b2;           
+        }
+
+        public bool ImageSize()
+        {
+
+            var srcImagen = Objects.uploadimage.ResizeImage(_ImagePictureBox.Image,165,100);
+            var imagen = Objects.uploadimage.ImageToByte(srcImagen);
+            return false;
+        }
+
+        public void restablecer()
+        {
+            var tam = _textBoxCliente.Count;
+
+            _ImagePictureBox.Image = _imageBitmap;
+            _checkBoxCredito.Checked = false;                  
+            for (var i = 0; i <= tam - 1; i++)
+            {                                   
+                _labelCliente_Error[i].Visible = false;
+                _textBoxCliente[i].Text = "";                
+            }//for
         }
     }
 }
