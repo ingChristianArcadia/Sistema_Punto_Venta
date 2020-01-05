@@ -11,6 +11,7 @@ using ViewModels;
 using ViewModels.Libreria;
 
 
+
 namespace Sistema_punto_de_ventas
 {
     public partial class Form1 : Form
@@ -133,15 +134,15 @@ namespace Sistema_punto_de_ventas
 
         private void buttonCliente_Agregar_Click(object sender, EventArgs e)
         {
-            labelPrueba.Visible = false; //Eliminar al final
+            
             clientes.limpiarLabelClienteError();               
             bool b1 =  clientes.EsVacio();            
-            bool b2 = clientes.ValidarCorreo(textBoxCliente_Email.Text);            
-           // bool b3 = clientes.ValidarImagenCliente(pictureBoxCliente);
-            if((b1 == true) && (b2 == true)/* && (b3==true)*/)
+            bool b2 = clientes.ValidarCorreo(textBoxCliente_Email.Text);           
+            
+            if((b1 == true) && (b2 == true))
             {
-                labelPrueba.Text = "Dato insertado";
-                labelPrueba.Visible = true;
+                
+                clientes.nuevo_cliente();
             }
             
         }

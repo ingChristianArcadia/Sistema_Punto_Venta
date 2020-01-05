@@ -19,3 +19,5 @@ C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\
 C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache
 C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\ViewModels\obj\Debug\ViewModels.dll
 C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\ViewModels\obj\Debug\ViewModels.pdb
+C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\ViewModels\bin\Debug\Models.dll
+C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\ViewModels\bin\Debug\Models.pdb

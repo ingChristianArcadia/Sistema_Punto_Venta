@@ -96,6 +96,10 @@
     <None Include="Resources\select.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{1eb4f64e-9874-459a-b318-f486ed9ca644}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{3ae68097-37c6-4050-af74-b5b84caa9311}</Project>
       <Name>ViewModels</Name>

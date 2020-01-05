@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models.Conexion
 {
-    class ConexionSQL
+    public class ConexionSQL
     {
         public static string conexion = "Data Source = DESKTOP-84CDHH6; Initial Catalog=Punto_Ventas; User ID=sa; Password=SQL2019; Integrated Security=True";
     }

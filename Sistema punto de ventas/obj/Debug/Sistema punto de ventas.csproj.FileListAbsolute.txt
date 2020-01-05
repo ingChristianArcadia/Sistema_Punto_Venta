@@ -37,3 +37,5 @@ C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\
 C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema_punto_de_ventas.Form1.resources
 C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema_punto_de_ventas.Properties.Resources.resources
 C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\Sistema punto de ventas\obj\Debug\Sistema punto de ventas.csproj.GenerateResource.Cache
+C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\Sistema punto de ventas\bin\Debug\Models.dll
+C:\Users\Christian Arcadia\Source\Repos\ingChristianArcadia\Sistema_Punto_Venta\Sistema punto de ventas\bin\Debug\Models.pdb

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ViewModels.Libreria;
+using Models.Conexion;
+using System.Data;
 
 namespace ViewModels
 {
@@ -17,6 +17,8 @@ namespace ViewModels
         private PictureBox _ImagePictureBox;
         private CheckBox _checkBoxCredito;
         private Bitmap _imageBitmap;
+        
+       
 
         public ClientesVM(object[] objetos,List<TextBox> textBoxCliente, List<Label> labelCliente_Error)
         {
@@ -81,14 +83,7 @@ namespace ViewModels
             return b2;           
         }
 
-        public bool ImageSize()
-        {
-
-            var srcImagen = Objects.uploadimage.ResizeImage(_ImagePictureBox.Image,165,100);
-            var imagen = Objects.uploadimage.ImageToByte(srcImagen);
-            return false;
-        }
-
+        
         public void restablecer()
         {
             var tam = _textBoxCliente.Count;
@@ -100,6 +95,55 @@ namespace ViewModels
                 _labelCliente_Error[i].Visible = false;
                 _textBoxCliente[i].Text = "";                
             }//for
+        }
+
+        public int checarCredito()
+        {
+            if (_checkBoxCredito.Checked)
+            {
+                return 1;
+            }else
+            {
+                return 0;
+            }
+        }
+
+        public void nuevo_cliente()
+        {
+            var srcImagen = Objects.uploadimage.ResizeImage(_ImagePictureBox.Image, 165, 100);
+            var imagen = Objects.uploadimage.ImageToByte(srcImagen);
+            DateTime date = DateTime.UtcNow.Date;
+            var fecha = date.ToString("yyyy/MM/dd");
+            int credito = checarCredito();
+            
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = ConexionSQL.conexion;
+                connection.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("nuevo_cliente", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                Console.WriteLine(_textBoxCliente[0].Text);
+                
+                cmd.Parameters.AddWithValue("@Nombre",_textBoxCliente[0].Text);
+                cmd.Parameters.AddWithValue("@Apellido",_textBoxCliente[1].Text);
+                cmd.Parameters.AddWithValue("@Correo", _textBoxCliente[2].Text);
+                cmd.Parameters.AddWithValue("@Direccion", _textBoxCliente[4].Text);
+                cmd.Parameters.AddWithValue("@Telefono", _textBoxCliente[3].Text);                
+                cmd.Parameters.AddWithValue("@Fecha", fecha);
+                cmd.Parameters.AddWithValue("@Credito", credito);
+                cmd.Parameters.AddWithValue("@Imagen", imagen);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                restablecer();
+                MessageBox.Show("El cliente se guardo correctamente");
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }
