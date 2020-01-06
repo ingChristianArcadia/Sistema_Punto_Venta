@@ -63,6 +63,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Punto_VentasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Punto_VentasDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Punto_VentasDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +106,17 @@
     </None>
     <None Include="Punto_VentasDataSet.xss">
       <DependentUpon>Punto_VentasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Punto_VentasDataSet1.xsc">
+      <DependentUpon>Punto_VentasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Punto_VentasDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Punto_VentasDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Punto_VentasDataSet1.xss">
+      <DependentUpon>Punto_VentasDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Resources\logo.png" />
   </ItemGroup>

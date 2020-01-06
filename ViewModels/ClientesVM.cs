@@ -20,8 +20,6 @@ namespace ViewModels
         private CheckBox _checkBoxCredito;
         private Bitmap _imageBitmap;
         private static DataGridView _dataGridView_Cliente;
-        private int _reg_por_pagina, _num_pagina = 1;
-
 
 
 
@@ -38,7 +36,7 @@ namespace ViewModels
         {
             var tam = _textBoxCliente.Count;
             bool b1 = true;
-            for (var i = 0; i <= tam - 1; i++)
+            for (var i = 1; i <= tam - 1; i++)
             {
                 if (_textBoxCliente[i].Text.Equals(""))
                 {
@@ -55,7 +53,7 @@ namespace ViewModels
         public void limpiarLabelClienteError()
         {
             var tam = _textBoxCliente.Count;
-            for (var i = 0; i <=tam  - 1; i++)
+            for (var i = 1; i <=tam  - 1; i++)
             {                
                     _labelCliente_Error[i].Visible = false;   
             }
@@ -92,12 +90,13 @@ namespace ViewModels
         
         public void restablecer()
         {
-            _num_pagina = 1;
+            
             var tam = _textBoxCliente.Count;
             _ImagePictureBox.Image = _imageBitmap;
             _checkBoxCredito.Checked = false;                  
             for (var i = 0; i <= tam - 1; i++)
-            {                                   
+            {
+                Console.WriteLine("Linea"+i);                       
                 _labelCliente_Error[i].Visible = false;
                 _textBoxCliente[i].Text = "";                
             }//for
@@ -169,6 +168,9 @@ namespace ViewModels
                 sqlAdapter.SelectCommand = cmd;
                 sqlAdapter.Fill(dataT);
                 _dataGridView_Cliente.DataSource = dataT;
+                _dataGridView_Cliente.Columns[0].Visible = false;
+                _dataGridView_Cliente.Columns[6].Visible = false;
+                _dataGridView_Cliente.Columns[8].Visible = false;
                 cmd.Dispose();
                 connection.Close();
                 
@@ -179,5 +181,28 @@ namespace ViewModels
             }
 
         }//BuscarCliente
+
+        public void getClienteDeGridViewCliente()
+        {
+            _textBoxCliente[0].Text = Convert.ToString(_dataGridView_Cliente.CurrentRow.Cells[0].Value);
+            _textBoxCliente[1].Text = Convert.ToString(_dataGridView_Cliente.CurrentRow.Cells[1].Value);
+            _textBoxCliente[2].Text = Convert.ToString(_dataGridView_Cliente.CurrentRow.Cells[2].Value);
+            _textBoxCliente[3].Text = Convert.ToString(_dataGridView_Cliente.CurrentRow.Cells[3].Value);
+            _textBoxCliente[4].Text = Convert.ToString(_dataGridView_Cliente.CurrentRow.Cells[4].Value);
+            _textBoxCliente[5].Text = Convert.ToString(_dataGridView_Cliente.CurrentRow.Cells[5].Value);
+           
+
+            _checkBoxCredito.Checked = Convert.ToBoolean(_dataGridView_Cliente.CurrentRow.Cells[7].Value);
+            try
+            {
+                byte[] arrayImage = (byte[])_dataGridView_Cliente.CurrentRow.Cells[8].Value;
+                //_ImagePictureBox.Image = Objects.uploadimage.byteArrayToImage(arrayImage);
+            }
+            catch (Exception) {
+                _ImagePictureBox.Image = _imageBitmap;
+            }
+
+
+        }
     }
 }

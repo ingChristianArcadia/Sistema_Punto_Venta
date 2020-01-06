@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -55,7 +63,7 @@
             this.labelCliente_Apellido = new System.Windows.Forms.Label();
             this.textBoxCliente_Nombre = new System.Windows.Forms.TextBox();
             this.labelCliente_Nombre = new System.Windows.Forms.Label();
-            this.textBoxCliente_Nid = new System.Windows.Forms.TextBox();
+            this.textBoxCliente_id = new System.Windows.Forms.TextBox();
             this.labelCliente_Nid = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBoxCliente = new System.Windows.Forms.PictureBox();
@@ -74,6 +82,10 @@
             this.punto_VentasDataSet = new Sistema_punto_de_ventas.Punto_VentasDataSet();
             this.selectallclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.select_all_clienteTableAdapter = new Sistema_punto_de_ventas.Punto_VentasDataSetTableAdapters.select_all_clienteTableAdapter();
+            this.punto_VentasDataSet1 = new Sistema_punto_de_ventas.Punto_VentasDataSet1();
+            this.selectallclienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.select_all_clienteTableAdapter1 = new Sistema_punto_de_ventas.Punto_VentasDataSet1TableAdapters.select_all_clienteTableAdapter();
+            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +94,7 @@
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creditoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.fotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.labelCliente_Mensaje_Error = new System.Windows.Forms.Label();
             this.tabControlPrincipal.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -97,6 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.punto_VentasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectallclienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.punto_VentasDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectallclienteBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlPrincipal
@@ -177,6 +192,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.labelCliente_Mensaje_Error);
             this.tabPage3.Controls.Add(this.checkBoxCliente_Credito);
             this.tabPage3.Controls.Add(this.labelCliente_Direccion_Error);
             this.tabPage3.Controls.Add(this.labelCliente_Telefono_Error);
@@ -195,7 +211,7 @@
             this.tabPage3.Controls.Add(this.labelCliente_Apellido);
             this.tabPage3.Controls.Add(this.textBoxCliente_Nombre);
             this.tabPage3.Controls.Add(this.labelCliente_Nombre);
-            this.tabPage3.Controls.Add(this.textBoxCliente_Nid);
+            this.tabPage3.Controls.Add(this.textBoxCliente_id);
             this.tabPage3.Controls.Add(this.labelCliente_Nid);
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.label4);
@@ -430,16 +446,16 @@
             this.labelCliente_Nombre.TabIndex = 5;
             this.labelCliente_Nombre.Text = "Nombre(s)";
             // 
-            // textBoxCliente_Nid
+            // textBoxCliente_id
             // 
-            this.textBoxCliente_Nid.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxCliente_Nid.Enabled = false;
-            this.textBoxCliente_Nid.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCliente_Nid.Location = new System.Drawing.Point(21, 232);
-            this.textBoxCliente_Nid.Multiline = true;
-            this.textBoxCliente_Nid.Name = "textBoxCliente_Nid";
-            this.textBoxCliente_Nid.Size = new System.Drawing.Size(194, 36);
-            this.textBoxCliente_Nid.TabIndex = 4;
+            this.textBoxCliente_id.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxCliente_id.Enabled = false;
+            this.textBoxCliente_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCliente_id.Location = new System.Drawing.Point(21, 232);
+            this.textBoxCliente_id.Multiline = true;
+            this.textBoxCliente_id.Name = "textBoxCliente_id";
+            this.textBoxCliente_id.Size = new System.Drawing.Size(194, 36);
+            this.textBoxCliente_id.TabIndex = 4;
             // 
             // labelCliente_Nid
             // 
@@ -614,8 +630,17 @@
             this.dataGridView_Cliente.AutoGenerateColumns = false;
             this.dataGridView_Cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Cliente.BackgroundColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Cliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Cliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCliente,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
             this.correoDataGridViewTextBoxColumn,
@@ -624,13 +649,16 @@
             this.fechaDataGridViewTextBoxColumn,
             this.creditoDataGridViewTextBoxColumn,
             this.fotoDataGridViewImageColumn});
-            this.dataGridView_Cliente.DataSource = this.selectallclienteBindingSource;
+            this.dataGridView_Cliente.DataSource = this.selectallclienteBindingSource1;
             this.dataGridView_Cliente.GridColor = System.Drawing.Color.Gray;
             this.dataGridView_Cliente.Location = new System.Drawing.Point(6, 10);
             this.dataGridView_Cliente.Name = "dataGridView_Cliente";
             this.dataGridView_Cliente.ReadOnly = true;
+            this.dataGridView_Cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Cliente.Size = new System.Drawing.Size(690, 385);
             this.dataGridView_Cliente.TabIndex = 0;
+            this.dataGridView_Cliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cliente_CellClick);
+            this.dataGridView_Cliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView_Cliente_KeyUp);
             // 
             // punto_VentasDataSet
             // 
@@ -646,9 +674,38 @@
             // 
             this.select_all_clienteTableAdapter.ClearBeforeFill = true;
             // 
+            // punto_VentasDataSet1
+            // 
+            this.punto_VentasDataSet1.DataSetName = "Punto_VentasDataSet1";
+            this.punto_VentasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // selectallclienteBindingSource1
+            // 
+            this.selectallclienteBindingSource1.DataMember = "select_all_cliente";
+            this.selectallclienteBindingSource1.DataSource = this.punto_VentasDataSet1;
+            // 
+            // select_all_clienteTableAdapter1
+            // 
+            this.select_all_clienteTableAdapter1.ClearBeforeFill = true;
+            // 
+            // idCliente
+            // 
+            this.idCliente.DataPropertyName = "idCliente";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.idCliente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idCliente.HeaderText = "idCliente";
+            this.idCliente.Name = "idCliente";
+            this.idCliente.ReadOnly = true;
+            this.idCliente.Visible = false;
+            // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nombreDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
@@ -656,6 +713,8 @@
             // apellidoDataGridViewTextBoxColumn
             // 
             this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.apellidoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
             this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -663,6 +722,8 @@
             // correoDataGridViewTextBoxColumn
             // 
             this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.correoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
             this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
             this.correoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -670,6 +731,8 @@
             // direccionDataGridViewTextBoxColumn
             // 
             this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.direccionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
             this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -677,6 +740,8 @@
             // telefonoDataGridViewTextBoxColumn
             // 
             this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.telefonoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -684,9 +749,12 @@
             // fechaDataGridViewTextBoxColumn
             // 
             this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Visible = false;
             // 
             // creditoDataGridViewTextBoxColumn
             // 
@@ -704,6 +772,19 @@
             this.fotoDataGridViewImageColumn.Name = "fotoDataGridViewImageColumn";
             this.fotoDataGridViewImageColumn.ReadOnly = true;
             this.fotoDataGridViewImageColumn.Visible = false;
+            // 
+            // labelCliente_Mensaje_Error
+            // 
+            this.labelCliente_Mensaje_Error.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelCliente_Mensaje_Error.AutoSize = true;
+            this.labelCliente_Mensaje_Error.Font = new System.Drawing.Font("Calibri", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente_Mensaje_Error.ForeColor = System.Drawing.Color.Red;
+            this.labelCliente_Mensaje_Error.Location = new System.Drawing.Point(132, 441);
+            this.labelCliente_Mensaje_Error.Name = "labelCliente_Mensaje_Error";
+            this.labelCliente_Mensaje_Error.Size = new System.Drawing.Size(47, 13);
+            this.labelCliente_Mensaje_Error.TabIndex = 24;
+            this.labelCliente_Mensaje_Error.Text = "*Mensaje";
+            this.labelCliente_Mensaje_Error.Visible = false;
             // 
             // Form1
             // 
@@ -737,6 +818,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.punto_VentasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectallclienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.punto_VentasDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectallclienteBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -771,7 +854,7 @@
         private System.Windows.Forms.Label labelCliente_Apellido;
         private System.Windows.Forms.TextBox textBoxCliente_Nombre;
         private System.Windows.Forms.Label labelCliente_Nombre;
-        private System.Windows.Forms.TextBox textBoxCliente_Nid;
+        private System.Windows.Forms.TextBox textBoxCliente_id;
         private System.Windows.Forms.Label labelCliente_Nid;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button buttonCliente_Cancelar;
@@ -786,6 +869,10 @@
         private Punto_VentasDataSet punto_VentasDataSet;
         private System.Windows.Forms.BindingSource selectallclienteBindingSource;
         private Punto_VentasDataSetTableAdapters.select_all_clienteTableAdapter select_all_clienteTableAdapter;
+        private Punto_VentasDataSet1 punto_VentasDataSet1;
+        private System.Windows.Forms.BindingSource selectallclienteBindingSource1;
+        private Punto_VentasDataSet1TableAdapters.select_all_clienteTableAdapter select_all_clienteTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
@@ -794,6 +881,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn creditoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn fotoDataGridViewImageColumn;
+        private System.Windows.Forms.Label labelCliente_Mensaje_Error;
     }
 }
 

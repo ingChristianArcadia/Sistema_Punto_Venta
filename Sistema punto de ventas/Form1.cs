@@ -149,14 +149,15 @@ namespace Sistema_punto_de_ventas
 
         private void buttonCliente_Cancelar_Click(object sender, EventArgs e)
         {
-
+            clientes.restablecer();
         }
 
         private void tabControlPrincipal_Selected(object sender, TabControlEventArgs e)
         {
             var textBoxCliente = new List<TextBox>();
-            
+
             //textBoxCliente.Add(textBoxCliente_Nid);
+            textBoxCliente.Add(textBoxCliente_id);
             textBoxCliente.Add(textBoxCliente_Nombre);
             textBoxCliente.Add(textBoxCliente_Apellido);
             textBoxCliente.Add(textBoxCliente_Email);
@@ -169,7 +170,8 @@ namespace Sistema_punto_de_ventas
             labelCliente_Error.Add(labelCliente_Email_Error);
             labelCliente_Error.Add(labelCliente_Direccion_Error);
             labelCliente_Error.Add(labelCliente_Telefono_Error);
-            
+            labelCliente_Error.Add(labelCliente_Mensaje_Error);
+
 
             object[] objetos =
             {
@@ -184,13 +186,33 @@ namespace Sistema_punto_de_ventas
         }
 
 
-        #endregion
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'punto_VentasDataSet1.select_all_cliente' Puede moverla o quitarla según sea necesario.
+            this.select_all_clienteTableAdapter1.Fill(this.punto_VentasDataSet1.select_all_cliente);
             // TODO: esta línea de código carga datos en la tabla 'punto_VentasDataSet.select_all_cliente' Puede moverla o quitarla según sea necesario.
             this.select_all_clienteTableAdapter.Fill(this.punto_VentasDataSet.select_all_cliente);
 
         }
+
+        private void dataGridView_Cliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView_Cliente.Rows.Count != 0)
+            {
+                clientes.getClienteDeGridViewCliente();
+            }
+            
+        }
+
+        private void dataGridView_Cliente_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridView_Cliente.Rows.Count != 0)
+            {
+                clientes.getClienteDeGridViewCliente();
+            }
+        }
+        #endregion
     }
 }
