@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using ViewModels.Libreria;
 using Models.Conexion;
 using System.Data;
+using System.Threading.Tasks;
+using Models;
 
 namespace ViewModels
 {
@@ -17,8 +19,11 @@ namespace ViewModels
         private PictureBox _ImagePictureBox;
         private CheckBox _checkBoxCredito;
         private Bitmap _imageBitmap;
-        
-       
+        private static DataGridView _dataGridView_Cliente;
+        private int _reg_por_pagina, _num_pagina = 1;
+
+
+
 
         public ClientesVM(object[] objetos,List<TextBox> textBoxCliente, List<Label> labelCliente_Error)
         {
@@ -26,8 +31,9 @@ namespace ViewModels
             _labelCliente_Error = labelCliente_Error;
             _ImagePictureBox = (PictureBox)objetos[0];
             _checkBoxCredito = (CheckBox)objetos[1];
-            _imageBitmap = (Bitmap)objetos[2];            
-        }
+            _imageBitmap = (Bitmap)objetos[2];
+            _dataGridView_Cliente = (DataGridView)objetos[3];        
+        }//Constructor
         public bool EsVacio()
         {
             var tam = _textBoxCliente.Count;
@@ -44,7 +50,7 @@ namespace ViewModels
                 }               
             }//for
             return b1;
-        }
+        }//EsVacio()
 
         public void limpiarLabelClienteError()
         {
@@ -54,7 +60,7 @@ namespace ViewModels
                     _labelCliente_Error[i].Visible = false;   
             }
 
-        }
+        }//LimpiarLabelCLienteError()
 
         public bool ValidarCorreo(string correo)
         {
@@ -81,13 +87,13 @@ namespace ViewModels
 
             }
             return b2;           
-        }
+        }//ValidarCorreo()
 
         
         public void restablecer()
         {
+            _num_pagina = 1;
             var tam = _textBoxCliente.Count;
-
             _ImagePictureBox.Image = _imageBitmap;
             _checkBoxCredito.Checked = false;                  
             for (var i = 0; i <= tam - 1; i++)
@@ -95,18 +101,18 @@ namespace ViewModels
                 _labelCliente_Error[i].Visible = false;
                 _textBoxCliente[i].Text = "";                
             }//for
-        }
+        }//restablecer()
 
-        public int checarCredito()
+        public bool checarCredito()
         {
             if (_checkBoxCredito.Checked)
             {
-                return 1;
+                return true;
             }else
             {
-                return 0;
+                return false;
             }
-        }
+        }//checarCredito()
 
         public void nuevo_cliente()
         {
@@ -114,7 +120,7 @@ namespace ViewModels
             var imagen = Objects.uploadimage.ImageToByte(srcImagen);
             DateTime date = DateTime.UtcNow.Date;
             var fecha = date.ToString("yyyy/MM/dd");
-            int credito = checarCredito();
+            bool credito = checarCredito();
             
             try
             {
@@ -123,8 +129,7 @@ namespace ViewModels
                 connection.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd = new SqlCommand("nuevo_cliente", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                Console.WriteLine(_textBoxCliente[0].Text);
+                cmd.CommandType = CommandType.StoredProcedure;                
                 
                 cmd.Parameters.AddWithValue("@Nombre",_textBoxCliente[0].Text);
                 cmd.Parameters.AddWithValue("@Apellido",_textBoxCliente[1].Text);
@@ -137,13 +142,42 @@ namespace ViewModels
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 restablecer();
-                MessageBox.Show("El cliente se guardo correctamente");
+                llenarGridClientes();
+                MessageBox.Show("El cliente se creo correctamente");
 
             }
             catch(Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-        }
+        }//nuevo_cliente()
+
+        public void llenarGridClientes()
+        {
+            
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter();
+                DataTable dataT = new DataTable();
+                
+                connection.ConnectionString = ConexionSQL.conexion;
+                connection.Open();
+                cmd = new SqlCommand("select_all_cliente", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                sqlAdapter.SelectCommand = cmd;
+                sqlAdapter.Fill(dataT);
+                _dataGridView_Cliente.DataSource = dataT;
+                cmd.Dispose();
+                connection.Close();
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }//BuscarCliente
     }
 }

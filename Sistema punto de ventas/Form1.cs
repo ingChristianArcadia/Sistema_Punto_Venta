@@ -175,17 +175,22 @@ namespace Sistema_punto_de_ventas
             {
                 pictureBoxCliente,
                 checkBoxCliente_Credito,
-                Properties.Resources.select
-
-
+                Properties.Resources.select,
+                dataGridView_Cliente
             };
 
-
             clientes = new ClientesVM(objetos,textBoxCliente, labelCliente_Error);
+            clientes.llenarGridClientes();
         }
+
 
         #endregion
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'punto_VentasDataSet.select_all_cliente' Puede moverla o quitarla según sea necesario.
+            this.select_all_clienteTableAdapter.Fill(this.punto_VentasDataSet.select_all_cliente);
 
+        }
     }
 }
