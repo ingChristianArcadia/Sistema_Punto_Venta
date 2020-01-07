@@ -130,11 +130,11 @@ namespace ViewModels
                 cmd = new SqlCommand("nuevo_cliente", connection);
                 cmd.CommandType = CommandType.StoredProcedure;                
                 
-                cmd.Parameters.AddWithValue("@Nombre",_textBoxCliente[0].Text);
-                cmd.Parameters.AddWithValue("@Apellido",_textBoxCliente[1].Text);
-                cmd.Parameters.AddWithValue("@Correo", _textBoxCliente[2].Text);
-                cmd.Parameters.AddWithValue("@Direccion", _textBoxCliente[4].Text);
-                cmd.Parameters.AddWithValue("@Telefono", _textBoxCliente[3].Text);                
+                cmd.Parameters.AddWithValue("@Nombre",_textBoxCliente[1].Text);
+                cmd.Parameters.AddWithValue("@Apellido",_textBoxCliente[2].Text);
+                cmd.Parameters.AddWithValue("@Correo", _textBoxCliente[3].Text);
+                cmd.Parameters.AddWithValue("@Direccion", _textBoxCliente[5].Text);
+                cmd.Parameters.AddWithValue("@Telefono", _textBoxCliente[4].Text);                
                 cmd.Parameters.AddWithValue("@Fecha", fecha);
                 cmd.Parameters.AddWithValue("@Credito", credito);
                 cmd.Parameters.AddWithValue("@Imagen", imagen);
