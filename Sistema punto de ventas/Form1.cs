@@ -156,7 +156,7 @@ namespace Sistema_punto_de_ventas
         {
             var textBoxCliente = new List<TextBox>();
 
-            //textBoxCliente.Add(textBoxCliente_Nid);
+         
             textBoxCliente.Add(textBoxCliente_id);
             textBoxCliente.Add(textBoxCliente_Nombre);
             textBoxCliente.Add(textBoxCliente_Apellido);
