@@ -203,6 +203,38 @@ namespace ViewModels
             }
 
 
-        }
+        }//getClienteDeGridViewCliente
+        public void llenarGridClientesBuscar(String palabra)
+        {
+
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter();
+                DataTable dataT = new DataTable();
+
+                connection.ConnectionString = ConexionSQL.conexion;
+                connection.Open();
+                cmd = new SqlCommand("select_buscar_cliente", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@palabra", palabra);
+                cmd.ExecuteNonQuery();
+                sqlAdapter.SelectCommand = cmd;
+                sqlAdapter.Fill(dataT);
+                _dataGridView_Cliente.DataSource = dataT;
+                _dataGridView_Cliente.Columns[0].Visible = false;
+                _dataGridView_Cliente.Columns[6].Visible = false;
+                _dataGridView_Cliente.Columns[8].Visible = false;
+                cmd.Dispose();
+                connection.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }//BuscarCliente
     }
 }

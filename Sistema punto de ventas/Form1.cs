@@ -213,6 +213,20 @@ namespace Sistema_punto_de_ventas
                 clientes.getClienteDeGridViewCliente();
             }
         }
+        
+
+        private void textBoxCliente_Buscar_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxCliente_Buscar.Text.Equals(""))
+            {
+                clientes.llenarGridClientes();
+            }
+            else
+            {
+                clientes.llenarGridClientesBuscar(textBoxCliente_Buscar.Text);
+            }
+            
+        }
         #endregion
     }
 }
