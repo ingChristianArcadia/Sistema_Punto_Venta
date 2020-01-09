@@ -50,5 +50,12 @@ namespace ViewModels.Libreria
             ImageConverter converter = new ImageConverter();
             return (byte[])converter.ConvertTo(img,typeof(byte[]));
         }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
     }
 }

@@ -227,6 +227,33 @@ namespace Sistema_punto_de_ventas
             }
             
         }
+      
+
+        private void tabControIizq_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControlizq.SelectedIndex)
+            {
+                case 0:
+                    tabControlDer.SelectedIndex = 0;
+                    break;
+                case 1:
+                    tabControlDer.SelectedIndex = 1;
+                    break;
+            }
+        }
+
+        private void tabControlDer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControlDer.SelectedIndex)
+            {
+                case 0:
+                    tabControlizq.SelectedIndex = 0;
+                    break;
+                case 1:
+                    tabControlizq.SelectedIndex = 1;
+                    break;
+            }
+        }
         #endregion
     }
 }
